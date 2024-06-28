@@ -36,34 +36,49 @@ function generateHTML(data) {
     .map(
       (product) => `
       <tr>
-        <td><img src="${product.image}" alt="Product Image"></td>
-        <td>${product.name}</td>
-        <td>${product.quantity}</td>
-        <td>${product.grossPrice}</td>
-        <td>${calculateNetPrice(product.grossPrice)}</td>
+        <td class="TdTable"><img class="Product" src="${
+          product.image
+        }" alt="Product Image"></td>
+        <td class="TdTable">${product.quantity}</td>
+        <td class="TdTable">${product.name}</td>
+        <td class="TdTable">${product.sku}</td>
+        <td class="TdTable">${calculateNetPrice(product.grossPrice)} PLN</td>
+        <td class="TdTable">${product.grossPrice}</td>
       </tr>
     `
     )
     .join("");
 
   const offerHTML = `
-      <h1>Offer for ${data.invoiceData.company}</h1>
-      <p>Address: ${data.invoiceData.address}</p>
-      <p>City: ${data.invoiceData.zipCity}</p>
-      <p>NIP: ${data.invoiceData.nip}</p>
-      <table>
-        <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Gross Price</th>
-          <th>Net Price</th>
-        </tr>
-        ${productRows}
-      </table>
-      <p>Shipping Cost: ${data.invoiceData.shippingCost}</p>
-      <p>Final Price: ${data.invoiceData.finalPrice}</p>
-    `;
+<body>
+<table class="Table">
+  <thead>
+    <tr>
+      <td class="LogoHead TdTable" colspan="6">
+        <img class="Logo" src="https://static.oferteo.pl/images/portfolio/2872811/orig/59449_logo-onled.png" />
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="header TdTable"><b>Zdjęcie</b></td>
+      <td class="header TdTable"><b>Ilość</b></td>
+      <td class="header TdTable"><b>Nazwa przedmiotu</b></td>
+      <td class="header TdTable"><b>Symbol</b></td>
+      <td class="header TdTable"><b>Cena netto</b></td>
+      <td class="header TdTable"><b>Cena brutto</b></td>
+    </tr>
+    ${productRows}
+    <tr>
+      <td class="header TdTable" colspan="5"><b>Całkowity koszt zamówienia:</b></td>
+      <td class="Sum TdTable"><b>${data.invoiceData.finalPrice}</b></td>
+    </tr>
+  </tbody>
+</table>
+<!-- END OF WRAPPER-->
+</body>
+</html>
+  `;
   document.body.innerHTML = offerHTML;
 }
 
@@ -77,8 +92,8 @@ function generatePDF(data) {
         <td><img src="${product.image}" alt="Product Image"></td>
         <td>${product.name}</td>
         <td>${product.quantity}</td>
-        <td>${product.grossPrice}</td>
         <td>${calculateNetPrice(product.grossPrice)}</td>
+        <td>${product.grossPrice}</td>
       </tr>
     `
     )

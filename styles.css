@@ -1,5 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
+*{
+    font-family: "Roboto", sans-serif;
   }
   
   h1 {
@@ -18,4 +18,44 @@ body {
   label, select, button {
     margin: 5px 0;
   }
-  
+  body {
+    background: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .Table {
+    border-collapse: collapse;
+    width: 900px;
+    box-shadow: 13px 15px 25px -20px rgba(0,0,0,0.68);
+  }
+  .TdTable {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E1DEE8;
+    text-align: center;
+    padding: 10px;
+  }
+  .LogoHead {
+    border: none;
+  }
+  .Logo {
+    padding: 20px;
+    width: 400px;
+  }
+  .Product {
+    transition: transform .4s;
+    width: 60px;
+  }
+  .Product:hover {
+    transform: scale(1.2);
+  }
+  .header {
+    color: #50754B;
+    font-size: 18px;
+    padding: 30px;
+  }
+  .Sum {
+    color: #6EB763;
+  }
