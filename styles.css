@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+
+  .company{
+    color: red;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label, select, button {
+    margin: 5px 0;
+  }
+  
