@@ -59,3 +59,57 @@
   .Sum {
     color: #6EB763;
   }
+
+/* PDF */
+
+  .container-col{
+    display: flex;
+    align-items: center;
+  }
+  .sbtw{
+    justify-content: space-between;
+  }
+  
+  .img-logo{
+    width: 150px;
+    margin-right: 100px;
+  }
+  
+  .c-green{
+    color: green;
+  }
+  
+  .min-width{
+    min-width: 250px;
+    max-width: 300px;
+  }
+  
+  p, h3{
+    margin: 5px;
+    padding: 0px;
+  }
+  
+  hr{
+    margin: 20px 10px;
+  }
+  
+  .addidional-information{
+    padding-left: 20px;
+  }
+  
+  /* Table */
+  
+  table{
+      width: 100%;
+      border-collapse: collapse;
+  
+  }
+  td{
+    border: 1px solid grey;
+    text-align: center
+  }
+  th,td {
+    padding: 10px 5px;
+  }
+  tr:nth-child(even){background-color: #f2f2f2;}
+  tr:hover {background-color: #ddd;}
