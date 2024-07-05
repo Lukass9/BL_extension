@@ -65,6 +65,12 @@
       finalPrice: document.querySelector('[data-tid="saleTotalPrice"]')
         ? document.querySelector('[data-tid="saleTotalPrice"]').innerText
         : "",
+      phone: document.getElementById("sale_info_phone")
+        ? document.getElementById("sale_info_phone").innerText
+        : "",
+      email: document.getElementById("sale_info_email")
+        ? document.getElementById("sale_info_email").innerText
+        : "",
     };
 
     return { products, invoiceData };

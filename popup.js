@@ -132,8 +132,8 @@ function generatePDF(data) {
 <div class="container-col sbtw">
   <div>
     <div class="container-col">
-      <h3>Data:</h3>
-      <p>${curentDate()}</p>
+      <h3>Data: </h3>
+      <p>  ${curentDate()}</p>
     </div>
     <h3>Okres Ważności</h3>
     <p>30 dni </p>
@@ -154,25 +154,25 @@ function generatePDF(data) {
     <p>adres sklepu:</p>
     <p>Kobierzycka 20E</p>
     <p>52-315 Wrocław</p>
-    <p>(+48) 792-741-206</p>
-    <p>email: tomasz.zaleski@onled.pl</p>
+    <p>+48 733 155 550</p>
+    <p>biuro@onled.pl</p>
   </div>
 
   <div class="min-width">
     <h3>Odbiorca</h3>
     <p>${data.invoiceData.company}</p>
-    <p>Address: ${data.invoiceData.address}</p>
-    <p>City: ${data.invoiceData.zipCity}</p>
-    <p>NIP: ${data.invoiceData.nip}</p>
-    <p>Tel: +48 123 456 789</p>
-    <p>email: example@mail.pl</p>
+    <p> ${data.invoiceData.address}</p>
+    <p> ${data.invoiceData.zipCity}</p>
+    <p>nip: ${data.invoiceData.nip}</p>
+    <p> ${data.invoiceData.phone}</p>
+    <p> ${data.invoiceData.email}</p>
   </div>
 </div>
 
 <hr>
 
      
-<table>
+<table id="pdfGenerator">
   <tr>
     <th>Zdjęcie</th>
     <th>Naza produktu</th>
@@ -195,12 +195,14 @@ function generatePDF(data) {
   </tr>
       </table>
 
+<div class="extra">
       <h3>Dane dodatkowe:</h3>
 <div class="addidional-information">
   <p>Pierwsze dane</p>
   <p>drugie dane</p>
 </div>
 <p>Sporządził: Łukasz Pisarek</p>
+</div>
     `;
 
   const opt = {
@@ -209,7 +211,10 @@ function generatePDF(data) {
     image: { type: "jpeg", quality: 1 },
     html2canvas: { scale: 2, useCORS: true },
     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-    pagebreak: { mode: ["css", "legacy"], avoid: ["tr"] },
+    pagebreak: {
+      mode: ["css", "legacy"],
+      avoid: ["tr", ".extra"],
+    },
   };
 
   const loadImages = (element) => {

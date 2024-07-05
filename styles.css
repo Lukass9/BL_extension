@@ -72,7 +72,6 @@
   
   .img-logo{
     width: 150px;
-    margin-right: 100px;
   }
   
   .c-green{
@@ -80,11 +79,12 @@
   }
   
   .min-width{
+    text-align: right;
     min-width: 250px;
     max-width: 300px;
   }
   
-  p, h3{
+  #pdfGenerator p,#pdfGenerator h3{
     margin: 5px;
     padding: 0px;
   }
@@ -99,17 +99,24 @@
   
   /* Table */
   
-  table{
+  #pdfGenerator{
       width: 100%;
       border-collapse: collapse;
-  
   }
-  td{
+
+#pdfGenerator th{
+  font-size: 18px;
+  color: green;
+}
+
+  #pdfGenerator td{
     border: 1px solid grey;
     text-align: center
   }
-  th,td {
+
+  #pdfGenerator th,#pdfGenerator td {
     padding: 10px 5px;
   }
-  tr:nth-child(even){background-color: #f2f2f2;}
-  tr:hover {background-color: #ddd;}
+
+  #pdfGenerator tr:nth-child(even){background-color: #f2f2f2;}
+  #pdfGenerator tr:hover {background-color: #ddd;}
